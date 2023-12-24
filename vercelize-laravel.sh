@@ -1,11 +1,35 @@
 #!/bin/bash
 
+# Banner
+echo -e '🚀 Vercelize Laravel 🚀\n'
+
 # Start
-echo '🚀 Starting setup...'
+echo -e '📦 Starting setup...\n'
+
+# Function to create file if it does not exist
+create_file() {
+    if [ ! -e "$1" ]; then
+        touch "$1"
+        echo -e "📄 Created $1\n"
+    else
+        echo -e "📄 $1 already exists\n"
+    fi
+}
+
+# Function to create folder if it does not exist
+create_folder() {
+    if [ ! -d "$1" ]; then
+        mkdir -p "$1"
+        echo -e "📁 Created $1\n"
+    else
+        echo -e "📁 $1 already exists\n"
+    fi
+}
 
 # Create api folder and index.php file
-echo '📁 Creating api folder and index.php file...'
-mkdir api
+echo -e '📁 Creating api folder and index.php file...\n'
+create_folder "api"
+create_file "api/index.php"
 cat <<'EOF' > api/index.php
 <?php
 
@@ -14,11 +38,13 @@ require __DIR__ . '/../public/index.php';
 EOF
 
 # Create .vercelignore file
-echo '📁 Creating .vercelignore file...'
+echo -e '📄 Creating .vercelignore file...\n'
+create_file ".vercelignore"
 echo '/vendor' > .vercelignore
 
 # Create vercel.json file
-echo '📁 Creating vercel.json file...'
+echo -e '📄 Creating vercel.json file...\n'
+create_file "vercel.json"
 cat <<'EOF' > vercel.json
 {
     "version": 2,
@@ -47,4 +73,10 @@ cat <<'EOF' > vercel.json
 }
 EOF
 
-echo '✅ Setup completed. Your project is now Vercel-ready.'
+# Ask if the user wants to run "vercel" command
+read -p '🚀 Do you want to run the "vercel" command now? (y/n): ' choice
+if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
+    vercel
+fi
+
+echo -e '✅ Setup completed. Your project is now Vercel-ready.\n'
