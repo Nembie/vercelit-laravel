@@ -29,6 +29,7 @@ cat <<'EOF' > vercel.json
         "src": "/(.*)",
         "dest": "/api/index.php"
     }],
+    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
