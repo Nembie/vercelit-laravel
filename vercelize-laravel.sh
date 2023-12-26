@@ -6,6 +6,18 @@ echo -e '🚀 Vercelize Laravel 🚀\n'
 # Start
 echo -e '📦 Starting setup...\n'
 
+# Check if Laravel project is present in the current directory
+laravel_project_path="./"
+
+if [ ! -f "${laravel_project_path}/artisan" ]; then
+    echo -e "⚠️ It seems that a Laravel project is not present in this directory."
+    read -p "Continue anyway? (y/n): " continue_choice
+    if [ "$continue_choice" != "y" ] && [ "$continue_choice" != "Y" ]; then
+        echo -e "❌ Setup aborted. Please make sure a Laravel project is present in this directory."
+        exit 1
+    fi
+fi
+
 # Check if .env.vercel file exists
 if [ -f ".env.vercel" ]; then
     # Load .env.vercel file
