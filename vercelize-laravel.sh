@@ -6,11 +6,18 @@ echo -e '🚀 Vercelize Laravel 🚀\n'
 # Start
 echo -e '📦 Starting setup...\n'
 
-# Check if .env file exists
-if [ -f ".env" ]; then
+# Check if .env.vercel file exists
+if [ -f ".env.vercel" ]; then
+    # Load .env.vercel file
+    export $(cat .env.vercel | grep -v ^# | xargs)
+    echo -e "🔧 Loaded values from .env.vercel file\n"
+elif [ -f ".env" ]; then
     # Load .env file
     export $(cat .env | grep -v ^# | xargs)
     echo -e "🔧 Loaded values from .env file\n"
+else
+    echo -e "❌ Neither .env.vercel nor .env file found. Please create one of them.\n"
+    exit 1
 fi
 
 # Function to create file if it does not exist
