@@ -1,5 +1,24 @@
 #!/bin/bash
 
+# Help function
+show_help() {
+    echo -e "Usage: $0 [-h] [-r]\n"
+    echo "Options:"
+    echo "  -h, --help       Show this help message"
+    echo "  -r, --reinstall  Reinstall, overwriting necessary files"
+    exit 0
+}
+
+# Check for options
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -h|--help) show_help ;;
+        -r|--reinstall) reinstall=true ;;
+        *) echo "Unknown parameter: $1" >&2; exit 1 ;;
+    esac
+    shift
+done
+
 # Banner
 echo -e '🚀 Vercelize Laravel 🚀\n'
 
@@ -16,6 +35,12 @@ if [ ! -f "${laravel_project_path}/artisan" ]; then
         echo -e "❌ Setup aborted. Please make sure a Laravel project is present in this directory."
         exit 1
     fi
+fi
+
+# Check if the "reinstall" option is provided
+if [ "$reinstall" = true ]; then
+    echo -e "🚨 Reinstall option selected. Overwriting necessary files...\n"
+    rm -rf .env.vercel vercel.json api .vercelignore
 fi
 
 # Check if .env.vercel file exists
