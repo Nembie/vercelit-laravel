@@ -29,7 +29,7 @@ echo -e '📦 Starting setup...\n'
 laravel_project_path="./"
 
 if [ ! -f "${laravel_project_path}/artisan" ]; then
-    echo -e "⚠️ It seems that a Laravel project is not present in this directory."
+    echo -e "⚠️ It seems that a Laravel project is not present in this directory.\n"
     read -p "Continue anyway? (y/n): " continue_choice
     if [ "$continue_choice" != "y" ] && [ "$continue_choice" != "Y" ]; then
         echo -e "❌ Setup aborted. Please make sure a Laravel project is present in this directory."
@@ -80,17 +80,17 @@ create_folder() {
 # Prompt or display APP_URL
 read -p "🌐 Enter the value for APP_URL (default: ${APP_URL:-'https://yourproductionurl.com'}): " user_app_url
 APP_URL=${user_app_url:-${APP_URL:-'https://yourproductionurl.com'}}
-echo "🔧 APP_URL set to: $APP_URL\n"
+echo -e "🔧 APP_URL set to: $APP_URL\n"
 
 # Prompt or display APP_ENV
 read -p "⚙️ Enter the value for APP_ENV (default: ${APP_ENV:-'production'}): " user_app_env
 APP_ENV=${user_app_env:-${APP_ENV:-'production'}}
-echo "🔧 APP_ENV set to: $APP_ENV\n"
+echo -e "🔧 APP_ENV set to: $APP_ENV\n"
 
 # Prompt or display APP_DEBUG
 read -p "🚨 Enter the value for APP_DEBUG (default: ${APP_DEBUG:-'true'}): " user_app_debug
 APP_DEBUG=${user_app_debug:-${APP_DEBUG:-'true'}}
-echo "🔧 APP_DEBUG set to: $APP_DEBUG\n"
+echo -e "🔧 APP_DEBUG set to: $APP_DEBUG\n"
 
 # Create api folder and index.php file
 echo -e '📁 Creating api folder and index.php file...\n'
