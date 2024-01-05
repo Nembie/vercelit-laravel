@@ -1,6 +1,7 @@
-# Vercelit Laravel
+# 🚀 Vercelit Laravel
 
-![Vercelit Laravel](https://github.com/Nembie/vercelit-laravel/assets/47114030/40354912-68d9-457f-ab15-e3967f8dcfd7)
+
+![Vercelit Laravel](https://github.com/Nembie/vercelit-laravel/assets/47114030/176b11f3-bdb2-4bb5-b652-8cebf099e1d2)
 
 
 This Bash script automates the setup process for deploying a [Laravel](https://laravel.com) project on [Vercel](https://vercel.com). It allows you to configure essential environment variables, create required files and directories, and generate a Vercel configuration.
