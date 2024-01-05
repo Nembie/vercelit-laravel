@@ -1,23 +1,23 @@
 #!/bin/bash
 
 INSTALL_DIR="/usr/local/bin"
-SCRIPT_NAME="vercelize-laravel.sh"
+SCRIPT_NAME="vercelit-laravel.sh"
 SCRIPT_PATH="$INSTALL_DIR/$SCRIPT_NAME"
 
 # Help function
 show_help() {
-    echo -e '🚀 Vercelize Laravel Installer 🚀\n'
+    echo -e '🚀 Vercelit Laravel Installer 🚀\n'
     echo -e "Usage: $0 [-h] [-u] [-r]\n"
     echo "Options:"
     echo "  -h, --help       Show this help message"
-    echo "  -u, --uninstall  Uninstall the Vercelize Laravel setup"
+    echo "  -u, --uninstall  Uninstall the Vercelit Laravel setup"
     echo "  -r, --reinstall  Reinstall, overwriting necessary files"
     exit 0
 }
 
 # Install function
 install() {
-    echo "🌟 Installing Vercelize Laravel script..."
+    echo "🌟 Installing Vercelit Laravel script..."
 
     # Check if the script already exists
     if [ -e "$SCRIPT_PATH" ]; then
@@ -26,23 +26,23 @@ install() {
     fi
 
     # Copy the script to the installation directory
-    cp vercelize-laravel.sh "$INSTALL_DIR"
+    cp vercelit-laravel.sh "$INSTALL_DIR"
 
     # Create a symbolic link for global access
-    ln -s "$INSTALL_DIR/$SCRIPT_NAME" "$INSTALL_DIR/vercelize-laravel"
+    ln -s "$INSTALL_DIR/$SCRIPT_NAME" "$INSTALL_DIR/vercelit-laravel"
 
-    echo "✅ Vercelize Laravel script has been installed successfully."
+    echo "✅ Vercelit Laravel script has been installed successfully."
 }
 
 # Uninstall function
 uninstall() {
-    echo "🗑️ Uninstalling Vercelize Laravel script..."
+    echo "🗑️ Uninstalling Vercelit Laravel script..."
 
     # Remove the script and symbolic link
     rm -f "$SCRIPT_PATH"
-    rm -f "$INSTALL_DIR/vercelize-laravel"
+    rm -f "$INSTALL_DIR/vercelit-laravel"
 
-    echo "✅ Vercelize Laravel script has been uninstalled successfully."
+    echo "✅ Vercelit Laravel script has been uninstalled successfully."
 }
 
 # Check for options

@@ -20,7 +20,7 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Banner
-echo -e '🚀 Vercelize Laravel 🚀\n'
+echo -e '🚀 Vercelit Laravel 🚀\n'
 
 # Start
 echo -e '📦 Starting setup...\n'

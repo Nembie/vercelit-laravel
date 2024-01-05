@@ -1,6 +1,6 @@
-# Vercelize Laravel
+# Vercelit Laravel
 
-![Vercelize Laravel](https://github.com/Nembie/vercelize-laravel/assets/47114030/40354912-68d9-457f-ab15-e3967f8dcfd7)
+![Vercelit Laravel](https://github.com/Nembie/vercelit-laravel/assets/47114030/40354912-68d9-457f-ab15-e3967f8dcfd7)
 
 
 This Bash script automates the setup process for deploying a [Laravel](https://laravel.com) project on [Vercel](https://vercel.com). It allows you to configure essential environment variables, create required files and directories, and generate a Vercel configuration.
@@ -8,7 +8,7 @@ This Bash script automates the setup process for deploying a [Laravel](https://l
 ## 🚀 Usage
 
 ```bash
-vercelize-laravel [-h] [-r]
+vercelit-laravel [-h] [-r]
 ```
 
 ## ⚙️ Installation
@@ -16,13 +16,13 @@ vercelize-laravel [-h] [-r]
 1. Clone this repository into a folder.
 
 ```bash
-git clone https://github.com/Nembie/vercelize-laravel
+git clone https://github.com/Nembie/vercelit-laravel
 ```
 
 2. Go to folder
 
 ```bash
-cd vercelize-laravel
+cd vercelit-laravel
 ```
 
 3. Run setup.sh
@@ -33,7 +33,7 @@ cd vercelize-laravel
 4. Usage
 ```bash
 // In your Laravel project directory
-vercelize-laravel
+vercelit-laravel
 ```
 
 ## 🧰 Options
@@ -43,7 +43,7 @@ vercelize-laravel
 You can use the -r or --reinstall option to reinstall the setup, overwriting necessary files. This is useful if you need to reset or update your configuration.
 
 ```bash
-./vercelize-laravel.sh -r
+./vercelit-laravel.sh -r
 ```
 
 ## 🔧 Enviroment variables
@@ -63,4 +63,4 @@ If you find any issues or have suggestions for improvements, feel free to open a
 
 ## 📝 License
 
-This package is open-sourced software licensed under the [MIT license](https://github.com/Nembie/vercelize-laravel/blob/main/LICENSE).
+This package is open-sourced software licensed under the [MIT license](https://github.com/Nembie/vercelit-laravel/blob/main/LICENSE).
